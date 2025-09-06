@@ -1,176 +1,330 @@
 export const siteContent = {
   meta: {
-    title: "LANGUAGE WATCH Foundation (LWF)",
-    description: "LANGUAGE WATCH Foundation (LWF), languagewatchfoundation, language watch foundation, Accra, First PhD in Twi, LWF. We are linguists, language professionals, and communication experts. Dr. Nana Anima Wiafe-Akenten, an Akan Linguist, leads our team.",
-    keywords: "Language Watch, LWF, Twi, Akan, Linguist, Ghana, Accra"
+    title: "CampusGem - Igniting Christ-Centered Transformation",
+    description: "CampusGem is a dynamic Christian ministry dedicated to transforming young minds through Christ-centered values. We believe that what we feed our brains shapes who we become, and we're committed to instilling spiritual wisdom in the next generation.",
+    keywords: "CampusGem, Christian Ministry, Youth Ministry, Christ-centered, Transformation, Eagles Camp, Love Feasts, Mentoring"
   },
 
   navigation: [
     { name: "Home", href: "/", icon: "home" },
-    { name: "About", href: "/about", icon: "user" },
-    { name: "Services", href: "/services", icon: "cog" },
-    { name: "Portfolio", href: "/portfolio", icon: "image" },
-    { name: "Team", href: "/team", icon: "users" },
-    { name: "Contact", href: "/contact", icon: "mail" }
+    { name: "About", href: "/about", icon: "info", hasSubmenu: true },
+    { name: "Our Senior Pastor", href: "/senior-pastor", icon: "user" },
+    { name: "Daily Confession", href: "/daily-confession", icon: "heart" },
+    { name: "Activities", href: "/activities", icon: "calendar", hasSubmenu: true },
+    { name: "Gallery", href: "/gallery", icon: "image" },
+    { name: "Contact", href: "/contact", icon: "mail" },
+    { name: "Donate", href: "/donate", icon: "gift", isButton: true }
   ],
 
   hero: {
-    title: "LANGUAGE WATCH Foundation (LWF)",
-    subtitle: "",
-    description: "We are linguists, language professionals, and communication experts dedicated to promoting decorous and polite language use.",
-    ctaText: "Learn More About Us",
+    title: "CampusGem",
+    subtitle: "Igniting Christ-Centered Transformation",
+    description: "We think what we feed our brains, and we are what we think. Join us in creating a transformational movement that instills Christ-centered values in young minds and future generations.",
+    ctaText: "Join Our Mission",
     backgroundImage: "/images/banner.jpg"
   },
 
   about: {
-    title: "About Us",
-    subtitle: "Who We Are",
-    description: "LANGUAGE WATCH Foundation (LWF) is an independent, non-governmental organization based in Accra, Ghana, and was founded in 2016. Members of this association include; Linguists, professionals & practitioners of language, and communication experts. The team is led by Dr. Nana Anima Wiafe-Akenten, an Akan Linguist (the First PhD holder in Twi, GHLS). She is the founder and Chief Executive Officer (CEO).",
-
-    longDescription: "This body understands and believes strongly that 'words' both the written and the spoken words are very powerful and must be handled carefully, in both interpersonal communication and in public settings, especially in media discourse. Words indeed can break, make or unmake. Like a knife in a doctors' hand; words can save life and can also kill. Thus, the need to be mindful of how sensitive and delicate words are and as such we use them properly/appropriately and in the right context/setting.",
-
-    programs: "LANGUAGE WATCH Foundation (LWF) therefore embarks on programs that draw attention to the power of both the written and spoken words, especially; The LWF Outreach program. We also embark on training and seminars in speaking, reading and writing skills in our indigenous languages; #Suawokasa and #kasayie Campaign (for the young, youth and adult). We also offer individual and personal coaching programs on Voice & Speech, Speaking Skills (for personal & public) and Communicative Competence Skills.",
-
-    center: "We therefore have an affiliated language center (Nananom language & media center) where one can acquire proficiency, fluency, public speaking skills and communicative competence in our Ghanaian languages (Akan, Ga, Ewe, Dagomba, Hausa, etc.) and in English as well. Also, available at the teaching and learning support center are translation, transcription, interpretation, creative writing services, etc.",
-
-    tabs: {
-      objectives: {
-        title: "Our Objectives",
-        content: [
-          "Draw attention to power of the spoken words in general.",
-          "Call attention to the effects of hate and inflammatory speeches such as, insults/invectives, incitement, defamation, bias and ethnocentric statements.",
-          "Encourage the media to discourage hate speeches and vulgar language, rather than reinforce them.",
-          "Make interventions and draw speakers' attention to effects of such negative speeches on listeners' emotions.",
-          "Organize workshops, seminars and fora on appropriate, decorous and polite use of language."
-        ]
-      },
-      mission: {
-        title: "Our Mission",
-        content: "LANGUAGE WATCH Foundation (LWF)'s mission is to objectively observe language use in the media, political and other public settings. Draw attention to harmful effects of negative words, and seek ways to make speakers understand and appreciate the need to avoid inflammatory and inciteful utterances."
-      },
-      vision: {
-        title: "Our Vision",
-        content: "To become the leading language experts and practitioners who have become a household name for propagating polite speeches and decorous language in domestic, media, political, religious, health care, business and other public settings."
-      }
+    title: "About CampusGem",
+    description: "As a young person growing up in the twenty-first century, I became aware of how contaminated society is with various forms of information meant to stimulate our thoughts. Because of the abundance of contaminated content available, we unconsciously have a tendency to act in certain ways. This is a serious issue since incorrect conventions and ideas, as well as media and entertainment content, are ingraining themselves into our lives. The mind is where change starts. With the help of the Holy Spirit, we hope to ignite a transformational movement that will instill Christ-centered values in the minds of young people and future generations.",
+    mission: {
+      title: "Our Mission",
+      content: "To ignite a transformational movement that instills Christ-centered values in young minds and future generations through the power of the Holy Spirit."
     },
-    image: "/images/about.jpg"
+    vision: {
+      title: "Our Vision",
+      content: "To become a leading Christian ministry that transforms lives and builds strong, Christ-centered communities across the globe."
+    },
+    branches: [
+      {
+        title: "Youth Ministry",
+        description: "Comprehensive programs designed to strengthen faith, build character, and develop leadership skills grounded in biblical principles."
+      },
+      {
+        title: "Campus Ministry",
+        description: "Reaching students and young professionals with the gospel and providing spiritual guidance in academic and professional settings."
+      },
+      {
+        title: "Community Outreach",
+        description: "Serving our local communities through various programs and initiatives that demonstrate God's love in action."
+      }
+    ]
   },
 
-  founder: {
-    name: "Dr. Nana Anima Wiafe-Akenten",
-    title: "Founder & CEO",
-    qualification: "Akan Linguist (the First PhD holder in Twi, GHLS)",
-    quote: "The spoken word holds immense power, similar to a knife in a physician's hand. With the right words, one can bring life and with the wrong ones, cause harm. Words serve as keys, capable of unlocking doors or shutting them close. Simply, words can break, make and unmake and must be handled carefully.",
-    image: "/images/doc.jpeg",
+  seniorPastor: {
+    name: "Pastor [Senior Pastor Name]",
+    title: "Senior Pastor",
+    bio: "A passionate spiritual leader dedicated to transforming young lives through Christ-centered ministry. Committed to building strong Christian communities and equipping the next generation of leaders.",
+    image: "/images/img/gem/senior-pastor.jpg",
+    contact: "+233 XXX XXX XXX",
     social: {
-      twitter: "#",
       facebook: "#",
+      twitter: "#",
       instagram: "#",
       linkedin: "#",
       youtube: "#"
     }
   },
 
-  kasaTumi: {
-    title: "About LANGUAGE WATCH Foundation (LWF)",
-    subtitle: "Our Speaking Club - #Kasayie, Kasadɛ, Kasahwam",
-    description: "The LWF Outreach programs promote and encourage the use of decorous and polite language, especially in media, political, religious, domestic, health care, business settings and in all aspects of communication for national peace, stability and cohesion.",
-
-    challenge: "Obviously, the liberalization of the airwaves and media pluralism in the country has broadened citizens' involvement and participation (panel discussions, phone-ins, txt messages, etc.) in governance and other critical sectors of the country/economy. Whereas media pluralism and citizens' participation have contributed significantly to information sharing, knowledge acquisition and national development among others, there is also a growing concern among a cross-section of Ghanaians about the use of intemperate language (words, phrases and sentences). The invectives, vulgar, inflammatory language used by some political figures, supporters, callers and panel members have the potential to inflame passions, incite others and create avoidable problems, confusion, and conflict.",
-
-    solution: "As part of our contribution to national unity and solidarity, LWF Outreach creates awareness/sensitizes the general public to facilitate appropriate use of language for national peace, cohesion and development.",
-    image: "/images/twi1.png"
+  dailyConfession: {
+    title: "Our Daily Confession",
+    subtitle: "Speak Life, Live in Victory",
+    description: "Start each day with powerful declarations of faith that align your heart and mind with God's promises.",
+    mainConfession: [
+      "The lines have fallen unto us in their pleasant places, yes we have a godly heritage.",
+      "The lines have fallen unto me in their pleasant places, yes I have a godly heritage.",
+      "I have the mind of Christ, I have the wisdom of God.",
+      "I have the riches of God, I have the hidden riches of God.",
+      "I have the treasures of darkness.",
+      "I have divine favor.",
+      "I have divine scholarships.",
+      "I have divine health.",
+      "I have divine protection.",
+      "I have divine promotions.",
+      "I have divine provisions.",
+      "I have a divine partner.",
+      "We have divine children.",
+      "We have divine grandchildren.",
+      "We are touching lives.",
+      "We are influencing communities.",
+      "We are transforming nations.",
+      "So we shall live but not die to declare the works of God.",
+      "So I shall live but not die to declare the works of God.",
+      "May the grace of our Lord Jesus Christ, the love of God, and the sweet fellowship of the Holy Spirit be with us now and forever more."
+    ],
+    confessions: [
+      {
+        day: "Monday",
+        confession: "I have the mind of Christ and the wisdom of God. I have divine favor and divine protection."
+      },
+      {
+        day: "Tuesday",
+        confession: "I have the riches of God and the hidden riches of God. I have divine provisions and divine promotions."
+      },
+      {
+        day: "Wednesday",
+        confession: "I have divine health and divine scholarships. I am touching lives and influencing communities."
+      },
+      {
+        day: "Thursday",
+        confession: "The lines have fallen unto me in pleasant places. I have a godly heritage and divine treasures."
+      },
+      {
+        day: "Friday",
+        confession: "I have a divine partner and we have divine children. We are transforming nations."
+      },
+      {
+        day: "Saturday",
+        confession: "I shall live but not die to declare the works of God. I have the treasures of darkness."
+      },
+      {
+        day: "Sunday",
+        confession: "May the grace of our Lord Jesus Christ, the love of God, and the sweet fellowship of the Holy Spirit be with us now and forever more."
+      }
+    ]
   },
 
-  services: [
-    {
-      title: "Language Training",
-      description: "Comprehensive training programs in Ghanaian languages including Akan, Ga, Ewe, Dagomba, and Hausa.",
-      icon: "book",
-      features: ["Speaking Skills", "Reading & Writing", "Cultural Context", "Professional Certification"]
-    },
-    {
-      title: "Public Speaking Coaching",
-      description: "Individual and group coaching for voice, speech, and public speaking excellence.",
-      icon: "mic",
-      features: ["Voice Training", "Speech Delivery", "Confidence Building", "Presentation Skills"]
-    },
-    {
-      title: "Translation Services",
-      description: "Professional translation, transcription, and interpretation services.",
-      icon: "languages",
-      features: ["Document Translation", "Live Interpretation", "Audio Transcription", "Cultural Adaptation"]
-    },
-    {
-      title: "Media Consulting",
-      description: "Consulting services for media houses on appropriate language use and cultural sensitivity.",
-      icon: "radio",
-      features: ["Content Review", "Staff Training", "Policy Development", "Quality Assurance"]
-    },
-    {
-      title: "Workshop & Seminars",
-      description: "Educational workshops and seminars on decorous language use and communication skills.",
-      icon: "users",
-      features: ["Corporate Training", "Educational Institutions", "Community Outreach", "Custom Programs"]
-    },
-    {
-      title: "Creative Writing",
-      description: "Support for creative writing projects in local languages and cultural contexts.",
-      icon: "edit",
-      features: ["Story Development", "Cultural Authenticity", "Language Enhancement", "Publishing Support"]
-    }
-  ],
-
-  team: [
-    {
-      name: "Dr. Nana Anima Wiafe-Akenten",
-      slug: "nana-anima-wiafe-akenten",
-      role: "Founder & CEO",
-      image: "/images/doc.jpeg",
-      bio: "First PhD holder in Twi, GHLS. Leading expert in Akan linguistics.",
-      social: {
-        linkedin: "#",
-        twitter: "#"
+  activities: {
+    title: "Our Activities",
+    subtitle: "Building Strong Foundations in Christ",
+    description: "Our comprehensive programs are designed to nurture spiritual growth, build strong relationships, and develop Christ-centered leaders for the next generation.",
+    programs: [
+      {
+        title: "Eagles Camp",
+        description: "Periodic intensive camps to keep the flame of the spirit burning as we journey through each year.",
+        icon: "heart",
+        features: ["Spiritual Renewal", "Community Building", "Leadership Training", "Worship & Prayer"],
+        image: "/images/eagles-camp.jpg"
+      },
+      {
+        title: "Love Feasts",
+        description: "Relationship seminars and online monthly meetings with global participation.",
+        icon: "calendar",
+        features: ["Relationship Building", "Online Community", "Global Connection", "Monthly Gatherings"],
+        image: "/images/love-feasts.jpg"
+      },
+      {
+        title: "Mentoring HUB",
+        description: "Dedicated time to provide mentoring to young and upcoming executives.",
+        icon: "star",
+        features: ["One-on-One Mentoring", "Career Guidance", "Spiritual Direction", "Personal Development"],
+        image: "/images/mentoring-hub.jpg"
+      },
+      {
+        title: "ICT Skill Training",
+        description: "Empowering young people with digital skills for the modern world.",
+        icon: "laptop",
+        features: ["Digital Literacy", "Career Development", "Technology Skills", "Professional Growth"],
+        image: "/images/ict-training.jpg"
+      },
+      {
+        title: "Fun Fair",
+        description: "Annual celebration bringing together our community for fellowship and entertainment.",
+        icon: "party-popper",
+        features: ["Community Building", "Entertainment", "Fellowship", "Celebration"],
+        image: "/images/fun-fair.jpg"
+      },
+      {
+        title: "CG Marriages",
+        description: "Supporting and celebrating Christian marriages within our community.",
+        icon: "heart",
+        features: ["Marriage Counseling", "Relationship Support", "Community Celebration", "Spiritual Guidance"],
+        image: "/images/cg-marriages.jpg"
+      },
+      {
+        title: "Hall of Fame",
+        description: "Recognizing and celebrating outstanding achievements of our members.",
+        icon: "trophy",
+        features: ["Achievement Recognition", "Inspiration", "Role Models", "Community Pride"],
+        image: "/images/hall-of-fame.jpg"
       }
+    ]
+  },
+
+  gallery: {
+    title: "Gallery",
+    subtitle: "Capturing Moments of Grace",
+    description: "Browse through our collection of photos and videos from various events, activities, and moments of fellowship.",
+    categories: [
+      "All",
+      "Eagles Camp",
+      "Love Feasts",
+      "Fun Fair",
+      "CG Marriages",
+      "ICT Training",
+      "General Events"
+    ],
+    images: [
+      {
+        id: 1,
+        src: "/images/gallery/event1.jpg",
+        alt: "Eagles Camp 2024",
+        category: "Eagles Camp",
+        title: "Eagles Camp 2024"
+      },
+      {
+        id: 2,
+        src: "/images/gallery/event2.jpg",
+        alt: "Love Feasts Meeting",
+        category: "Love Feasts",
+        title: "Love Feasts Meeting"
+      },
+      {
+        id: 3,
+        src: "/images/gallery/event3.jpg",
+        alt: "Fun Fair Celebration",
+        category: "Fun Fair",
+        title: "Fun Fair Celebration"
+      }
+    ]
+  },
+
+  team: {
+    seniorPastor: {
+      name: "Pastor [Senior Pastor Name]",
+      title: "Senior Pastor",
+      bio: "A passionate spiritual leader dedicated to transforming young lives through Christ-centered ministry. Committed to building strong Christian communities and equipping the next generation of leaders.",
+      contact: "+233 XXX XXX XXX"
     },
-    // Add more team members here, e.g.
-    // {
-    //   name: "John Doe",
-    //   slug: "john-doe",
-    //   role: "Language Specialist",
-    //   image: "/images/john.jpg",
-    //   bio: "Expert in Ewe language and translation.",
-    //   social: { linkedin: "#", twitter: "#" }
-    // },
-  ],
+    leadership: [
+      { name: "Pastor [Name]", role: "Associate Pastor" },
+      { name: "Minister [Name]", role: "Youth Ministry Coordinator" },
+      { name: "Elder [Name]", role: "Board Chairman" },
+      { name: "Deacon [Name]", role: "Administrative Director" },
+      { name: "Sister [Name]", role: "Women's Ministry Leader" },
+      { name: "Brother [Name]", role: "Men's Ministry Coordinator" }
+    ],
+    coordinators: [
+      { name: "Coordinator [Name]", role: "Campus Ministry Leader" },
+      { name: "Coordinator [Name]", role: "Prayer Ministry Director" },
+      { name: "Coordinator [Name]", role: "Worship Team Leader" },
+      { name: "Coordinator [Name]", role: "Children's Ministry Director" },
+      { name: "Coordinator [Name]", role: "Outreach Coordinator" }
+    ],
+    volunteers: [
+      { name: "Volunteer [Name]", role: "Event Planning Team" },
+      { name: "Volunteer [Name]", role: "Technical Support" },
+      { name: "Volunteer [Name]", role: "Prayer Warrior" },
+      { name: "Volunteer [Name]", role: "Community Outreach" }
+    ]
+  },
 
   contact: {
-    address: "Accra, Ghana",
+    title: "Contact Us",
+    subtitle: "Get in Touch",
+    description: "We'd love to hear from you. Reach out to us for any inquiries, prayer requests, or to learn more about our ministry.",
     phone: "+233 XXX XXX XXX",
-    email: "info@kasatumi.org",
+    mobile: ["+233 XXX XXX XXX", "+233 XXX XXX XXX"],
+    email: "info@campusgem.org",
+    website: "campusgem.org",
+    location: "Accra, Ghana",
+    address: "P. O. Box XXX, Accra, Ghana",
+    officeHours: "Monday - Friday: 9:00 AM - 5:00 PM",
     social: {
-      facebook: "#",
-      twitter: "#",
-      instagram: "#",
-      linkedin: "#",
-      youtube: "#"
+      facebook: "",
+      twitter: "",
+      instagram: "",
+      linkedin: "",
+      youtube: ""
     }
+  },
+
+  donate: {
+    title: "Support Our Mission",
+    subtitle: "Partner With Us",
+    description: "Your generous donations help us continue our mission of transforming young lives through Christ-centered values. Every contribution makes a difference.",
+    options: [
+      {
+        title: "General Offering",
+        description: "Support our general ministry activities and programs",
+        amount: "Any Amount"
+      },
+      {
+        title: "Eagles Camp Fund",
+        description: "Help sponsor young people to attend our spiritual camps",
+        amount: "₵500"
+      },
+      {
+        title: "ICT Training Fund",
+        description: "Support our technology skills training programs",
+        amount: "₵300"
+      },
+      {
+        title: "Building Fund",
+        description: "Contribute to our facility development and expansion",
+        amount: "₵1000"
+      }
+    ],
+    paymentMethods: ["Mobile Money", "Bank Transfer", "Credit Card", "Cash"]
   },
 
   footer: {
-    description: "Promoting decorous and polite language use for national peace, stability and cohesion.",
+    title: "CampusGem",
+    description: "Igniting Christ-Centered Transformation in young minds and future generations.",
     quickLinks: [
-      { name: "About Us", href: "#about" },
-      { name: "Services", href: "#services" },
-      { name: "Contact", href: "#contact" },
-      { name: "Privacy Policy", href: "/privacy" }
+      { name: "About Us", href: "/about" },
+      { name: "Our Activities", href: "/activities" },
+      { name: "Daily Confession", href: "/daily-confession" },
+      { name: "Gallery", href: "/gallery" },
+      { name: "Contact", href: "/contact" }
     ],
-    services: [
-      { name: "Language Training", href: "#services" },
-      { name: "Translation", href: "#services" },
-      { name: "Consulting", href: "#services" },
-      { name: "Workshops", href: "#services" }
-    ]
+    activities: [
+      { name: "Eagles Camp", href: "/activities#eagles-camp" },
+      { name: "Love Feasts", href: "/activities#love-feasts" },
+      { name: "Mentoring HUB", href: "/activities#mentoring-hub" },
+      { name: "ICT Training", href: "/activities#ict-training" }
+    ],
+    contact: {
+      address: "Accra, Ghana",
+      phone: "+233 XXX XXX XXX",
+      email: "info@campusgem.org"
+    },
+    social: {
+      facebook: "#",
+      twitter: "#",
+      instagram: "#",
+      youtube: "#"
+    }
   }
 };
 

@@ -1,122 +1,121 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { ChevronDown, Sparkles, Globe, Users } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { siteContent } from '@/data/content'
-import Image from 'next/image'
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: "easeOut" }
-}
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import {
+  ArrowRight, Play, Star, Sparkles, Heart,
+  Users, Award, Calendar, ChevronDown,
+  Zap, Target, BookOpen, Globe, ChevronLeft, ChevronRight
+} from 'lucide-react'
 
 export default function Hero() {
-  const handleScrollToAbout = () => {
-    const aboutSection = document.getElementById('about')
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' })
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isHovered, setIsHovered] = useState(false)
+  const [currentWord, setCurrentWord] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0)
+
+  const words = ['Faith', 'Fellowship', 'Growth', 'Leadership', 'Community']
+
+  const heroImages = [
+    {
+      src: "/images/img/gem/ladies_mixed.jpg",
+      alt: "CampusGem Ladies Fellowship",
+      title: "Ladies Fellowship"
+    },
+    {
+      src: "/images/img/gem/mixed_colors.jpg",
+      alt: "CampusGem Mixed Group",
+      title: "Mixed Fellowship"
+    },
+    {
+      src: "/images/img/gem/two.jpg",
+      alt: "CampusGem Community",
+      title: "Community Bonding"
+    },
+    {
+      src: "/images/img/gem/senior-pastor.jpg",
+      alt: "Senior Pastor",
+      title: "Spiritual Leadership"
     }
+  ]
+
+  const heroImage = {
+    src: "/images/img/bg-img/amenuvor_at_winneba.jpg",
+    alt: "YWAM Accra Hero",
+    title: "YWAM Accra Community"
   }
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length)
+    }, 4000)
+    return () => clearInterval(imageInterval)
+  }, [])
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+  }
+
+  const floatingElements = [
+    { icon: <Star className="w-6 h-6" />, delay: 0, duration: 3 },
+    { icon: <Heart className="w-5 h-5" />, delay: 1, duration: 4 },
+    { icon: <Sparkles className="w-4 h-4" />, delay: 2, duration: 3.5 },
+    { icon: <Zap className="w-5 h-5" />, delay: 0.5, duration: 4.5 },
+    { icon: <Target className="w-4 h-4" />, delay: 1.5, duration: 3 },
+  ]
+
+  const stats = [
+    { number: '500+', label: 'Active Members', icon: <Users className="w-5 h-5" /> },
+    { number: '15+', label: 'Years of Impact', icon: <Award className="w-5 h-5" /> },
+    { number: '98%', label: 'Satisfaction Rate', icon: <Star className="w-5 h-5" /> },
+  ]
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={siteContent.hero.backgroundImage}
-          alt="Hero Background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-500/80 via-dark-500/70 to-dark-500/90" />
+    <section className="relative min-h-screen flex items-center justify-center bg-background text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6">Go for God.<br />YWAM Accra</h1>
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto lg:mx-0">
+              Join a global movement, full of young people driven by a passion to know God and make Him known in Accra.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <a
+                href="#about"
+                className="btn-primary bg-ywamteal hover:bg-ywamint text-background font-bold"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          {/* Hero Image */}
+          <div className="relative flex items-center justify-center">
+            <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white/10">
+              <img src={heroImage.src} alt={heroImage.alt} className="w-full h-96 object-cover" />
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-display font-bold text-white mb-6 leading-tight"
-          >
-            {siteContent.hero.title}
-          </motion.h1>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-2xl sm:text-3xl md:text-4xl font-display text-primary-400 mb-8"
-          >
-            {siteContent.hero.subtitle}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-            className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto mb-12 leading-relaxed"
-          >
-            {siteContent.hero.description}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
-          >
-            <a
-              href="#about"
-              className="bg-primary-500 text-white px-8 py-4 rounded-full hover:bg-primary-600 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              Learn More
-            </a>
-            <a
-              href="#contact"
-              className="bg-white/10 backdrop-blur-sm text-white border-2 border-white px-8 py-4 rounded-full hover:bg-white/20 transition-all duration-300 font-medium text-lg"
-            >
-              Contact Us
-            </a>
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.7 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-      >
-        <a
-          href="#about"
-          className="flex flex-col items-center text-white hover:text-primary-400 transition-colors duration-300"
-        >
-          <span className="text-sm mb-2 font-medium">Scroll Down</span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ChevronDown className="h-6 w-6" />
-          </motion.div>
-        </a>
-      </motion.div>
     </section>
   )
 }

@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   title: siteContent.meta.title,
   description: siteContent.meta.description,
   keywords: siteContent.meta.keywords,
-  authors: [{ name: 'LANGUAGE WATCH Foundation (LWF)' }],
-  creator: 'LANGUAGE WATCH Foundation (LWF)',
-  publisher: 'LANGUAGE WATCH Foundation (LWF)',
+  authors: [{ name: 'CampusGem' }],
+  creator: 'CampusGem',
+  publisher: 'CampusGem',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://languagewatchfoundation.org',
+    url: 'https://campusgem.org',
     siteName: siteContent.meta.title,
     title: siteContent.meta.title,
     description: siteContent.meta.description,
@@ -63,14 +63,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
+    <html lang="en" className={`dark ${inter.variable} ${raleway.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#e7a906" />
+        <meta name="theme-color" content="#6366F1" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-background text-foreground`}>
         <div className="min-h-screen bg-background font-sans antialiased">
           {children}
         </div>
