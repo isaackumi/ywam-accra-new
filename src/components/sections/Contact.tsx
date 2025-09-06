@@ -1,7 +1,7 @@
 'use client';
 
 import { siteContent } from '@/data/content';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle, User, FileText } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -68,17 +68,27 @@ export default function Contact() {
                         </h2>
                         <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
                         <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-                            Get in touch with us for any inquiries about our Bible school programs or to learn more about our ministry. We're here to help you on your spiritual journey.
+                            Get in touch with us for any inquiries about our Bible school programs or to learn more about our ministry. 
+                            We're here to help you on your spiritual journey and answer any questions you may have.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Contact Form */}
-                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/40 shadow-2xl">
-                            <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Send us a Message</h3>
+                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border-2 border-gray-600/50 shadow-2xl">
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center border-2 border-blue-500/50">
+                                    <MessageCircle className="w-6 h-6 text-blue-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white font-space-grotesk">Send us a Message</h3>
+                            </div>
+                            
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">Your Name</label>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2 flex items-center gap-2">
+                                        <User className="w-4 h-4" />
+                                        Your Name
+                                    </label>
                                     <input
                                         type="text"
                                         id="name"
@@ -86,12 +96,15 @@ export default function Contact() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                                        placeholder="John Doe"
+                                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                        placeholder="e.g., Kwame Asante, Ama Serwaa"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2 flex items-center gap-2">
+                                        <Mail className="w-4 h-4" />
+                                        Email Address
+                                    </label>
                                     <input
                                         type="email"
                                         id="email"
@@ -99,12 +112,15 @@ export default function Contact() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                                        placeholder="you@example.com"
+                                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                        placeholder="e.g., kwame.asante@gmail.com"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-200 mb-2">Subject</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-200 mb-2 flex items-center gap-2">
+                                        <FileText className="w-4 h-4" />
+                                        Subject
+                                    </label>
                                     <input
                                         type="text"
                                         id="subject"
@@ -112,12 +128,15 @@ export default function Contact() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                                        placeholder="Subject"
+                                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                        placeholder="e.g., DTS Application, Program Inquiry"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">Message</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2 flex items-center gap-2">
+                                        <MessageCircle className="w-4 h-4" />
+                                        Message
+                                    </label>
                                     <textarea
                                         id="message"
                                         name="message"
@@ -125,8 +144,8 @@ export default function Contact() {
                                         onChange={handleChange}
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
-                                        placeholder="Type your message here..."
+                                        className="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                                        placeholder="Tell us about your interest in our Bible school programs, your spiritual journey, or any questions you have..."
                                     />
                                 </div>
                                 <button
@@ -141,12 +160,18 @@ export default function Contact() {
                         </div>
 
                         {/* Contact Info */}
-                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/40 shadow-2xl">
-                            <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Contact Information</h3>
+                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border-2 border-gray-600/50 shadow-2xl">
+                            <div className="flex items-center gap-3 mb-8">
+                                <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center border-2 border-blue-500/50">
+                                    <MapPin className="w-6 h-6 text-blue-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white font-space-grotesk">Contact Information</h3>
+                            </div>
+                            
                             <div className="space-y-6">
                                 {contactInfo.map((info, idx) => (
-                                    <div key={info.title} className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center border border-blue-500/40">
+                                    <div key={info.title} className="flex items-center gap-4 p-4 rounded-lg bg-gray-800/50 border border-gray-600/30 hover:bg-gray-800/70 hover:border-blue-500/30 transition-all duration-200">
+                                        <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center border-2 border-blue-500/50">
                                             <info.icon className="w-6 h-6 text-blue-400" />
                                         </div>
                                         <div>
@@ -161,6 +186,15 @@ export default function Contact() {
                                         </div>
                                     </div>
                                 ))}
+                            </div>
+
+                            {/* Additional Info */}
+                            <div className="mt-8 p-6 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-xl border border-blue-500/30">
+                                <h4 className="text-lg font-semibold text-white mb-3 font-space-grotesk">Quick Response</h4>
+                                <p className="text-gray-200 text-sm leading-relaxed">
+                                    We typically respond to all inquiries within 24 hours. For urgent matters, 
+                                    please call us directly during business hours.
+                                </p>
                             </div>
                         </div>
                     </div>
