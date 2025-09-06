@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { siteContent } from '@/data/content'
+import BackToTop from '@/components/ui/BackToTop'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -70,11 +71,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a1a1a" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
-        <div className="min-h-screen bg-gray-900 font-sans antialiased">
-          {children}
-        </div>
-      </body>
+            <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
+                <div className="min-h-screen bg-gray-900 font-sans antialiased">
+                    {children}
+                    <BackToTop />
+                </div>
+            </body>
     </html>
   )
 }
