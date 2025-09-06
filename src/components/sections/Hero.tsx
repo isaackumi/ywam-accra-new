@@ -5,7 +5,10 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
+    <section className="relative min-h-screen flex items-center justify-center bg-gray-900">
+      {/* Dark overlay for extra depth */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
@@ -16,7 +19,7 @@ export default function Hero() {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
             Join a global movement of young people driven by a passion to know God and make Him known in Accra.
           </p>
           
@@ -41,7 +44,7 @@ export default function Hero() {
       
       {/* Subtle decorative elements */}
       <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 bg-purple-400/20 rounded-full blur-lg"></div>
+      <div className="absolute bottom-20 left-20 w-24 h-24 bg-purple-400/10 rounded-full blur-lg"></div>
     </section>
   )
 }
