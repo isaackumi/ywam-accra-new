@@ -36,8 +36,15 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-gray-900 border-t border-gray-800">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <footer className="bg-gray-900 relative overflow-hidden">
+            {/* Diagonal Line Element */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 transform -skew-y-1"></div>
+            
+            {/* Decorative Elements */}
+            <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
+            <div className="absolute bottom-10 left-10 w-24 h-24 bg-purple-400/10 rounded-full blur-lg"></div>
+            
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Brand Section */}
                     <div className="lg:col-span-1">
@@ -119,7 +126,9 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+                <div className="border-t border-gray-800 mt-12 pt-8 text-center relative">
+                    {/* Another diagonal accent */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
                     <p className="text-gray-300">
                         &copy; {new Date().getFullYear()} YWAM Accra. All rights reserved.
                     </p>
