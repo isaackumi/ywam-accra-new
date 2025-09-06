@@ -37,16 +37,16 @@ export default function About() {
                             About YWAM Accra
                         </h2>
                         <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            YWAM Accra is a transformational movement that instills Christ-centered values in young minds and future generations. We believe that what we feed our hearts and minds shapes who we become.
+                        <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                            YWAM Accra is a transformational Bible school that instills Christ-centered values in young minds and future generations. We believe that what we feed our hearts and minds shapes who we become.
                         </p>
                     </div>
 
                     {/* Mission Statement */}
-                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-gray-600/20">
+                    <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-gray-600/40 shadow-2xl">
                         <h3 className="text-2xl font-bold text-white mb-4 text-center font-space-grotesk">Our Mission</h3>
-                        <p className="text-lg text-gray-300 text-center leading-relaxed">
-                            To create a vibrant community where young people can grow spiritually, develop leadership skills, and build meaningful relationships that last a lifetime.
+                        <p className="text-lg text-gray-200 text-center leading-relaxed">
+                            To create a vibrant Bible school community where young people can grow spiritually, develop leadership skills, and build meaningful relationships that last a lifetime. We are committed to training disciples who will impact the world for Christ.
                         </p>
                     </div>
 
@@ -54,11 +54,11 @@ export default function About() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {features.map((feature, index) => (
                             <div key={feature.title} className="text-center p-6">
-                                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-4 border border-blue-500/30">
+                                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-4 border border-blue-500/40">
                                     {feature.icon}
                                 </div>
                                 <h4 className="text-xl font-semibold text-white mb-3 font-space-grotesk">{feature.title}</h4>
-                                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                                <p className="text-gray-200 leading-relaxed">{feature.description}</p>
                             </div>
                         ))}
                     </div>

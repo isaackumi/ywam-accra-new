@@ -67,18 +67,18 @@ export default function Contact() {
                             Contact Us
                         </h2>
                         <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                            Get in touch with us for any inquiries or to learn more about our ministry. We're here to help you on your spiritual journey.
+                        <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                            Get in touch with us for any inquiries about our Bible school programs or to learn more about our ministry. We're here to help you on your spiritual journey.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Contact Form */}
-                        <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/20">
+                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/40 shadow-2xl">
                             <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Send us a Message</h3>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">Your Name</label>
                                     <input
                                         type="text"
                                         id="name"
@@ -91,7 +91,7 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">Email Address</label>
                                     <input
                                         type="email"
                                         id="email"
@@ -104,7 +104,7 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-200 mb-2">Subject</label>
                                     <input
                                         type="text"
                                         id="subject"
@@ -117,7 +117,7 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">Message</label>
                                     <textarea
                                         id="message"
                                         name="message"
@@ -141,12 +141,12 @@ export default function Contact() {
                         </div>
 
                         {/* Contact Info */}
-                        <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/20">
+                        <div className="bg-gray-700/70 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/40 shadow-2xl">
                             <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Contact Information</h3>
                             <div className="space-y-6">
                                 {contactInfo.map((info, idx) => (
                                     <div key={info.title} className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
+                                        <div className="w-12 h-12 bg-blue-500/30 rounded-lg flex items-center justify-center border border-blue-500/40">
                                             <info.icon className="w-6 h-6 text-blue-400" />
                                         </div>
                                         <div>
@@ -156,7 +156,7 @@ export default function Contact() {
                                                     {info.value}
                                                 </a>
                                             ) : (
-                                                <div className="text-gray-300">{info.value}</div>
+                                                <div className="text-gray-200">{info.value}</div>
                                             )}
                                         </div>
                                     </div>

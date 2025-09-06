@@ -44,10 +44,10 @@ export default function Footer() {
                         <div className="space-y-6">
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-2 font-space-grotesk">YWAM Accra</h3>
-                                <p className="text-gray-400">Igniting Christ-Centered Transformation</p>
+                                <p className="text-gray-300">Igniting Christ-Centered Transformation</p>
                             </div>
-                            <p className="text-gray-300 leading-relaxed">
-                                Empowering students through faith, fellowship, and personal growth. Building leaders for tomorrow through transformative experiences.
+                            <p className="text-gray-200 leading-relaxed">
+                                Empowering students through faith, fellowship, and personal growth. Building leaders for tomorrow through transformative Bible school experiences.
                             </p>
                             {/* Social Links */}
                             <div className="flex gap-4">
@@ -55,7 +55,7 @@ export default function Footer() {
                                     <a
                                         key={social.name}
                                         href={social.href}
-                                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-colors duration-200 border border-gray-700"
+                                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-colors duration-200 border border-gray-700"
                                     >
                                         {social.icon}
                                     </a>
@@ -72,7 +72,7 @@ export default function Footer() {
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
-                                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                                        className="text-gray-200 hover:text-white transition-colors duration-200"
                                     >
                                         {link.name}
                                     </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                                     </div>
                                     <div>
                                         <div className="font-medium text-white">{info.title}</div>
-                                        <div className="text-gray-300">{info.value}</div>
+                                        <div className="text-gray-200">{info.value}</div>
                                     </div>
                                 </li>
                             ))}
@@ -102,7 +102,7 @@ export default function Footer() {
                     {/* Newsletter */}
                     <div>
                         <h4 className="text-lg font-semibold text-white mb-6 font-space-grotesk">Stay Connected</h4>
-                        <p className="text-gray-300 mb-4">
+                        <p className="text-gray-200 mb-4">
                             Subscribe to our newsletter for updates and events.
                         </p>
                         <div className="flex">
@@ -120,7 +120,7 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-                    <p className="text-gray-400">
+                    <p className="text-gray-300">
                         &copy; {new Date().getFullYear()} YWAM Accra. All rights reserved.
                     </p>
                 </div>
