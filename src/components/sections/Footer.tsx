@@ -1,179 +1,130 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import {
-    Facebook, Twitter, Instagram, Linkedin, Youtube,
-    Mail, Phone, MapPin, Heart, ArrowUp,
-    Calendar, Users, Award, Star, Sparkles,
-    Download, Share2, MessageCircle, Bell
-} from 'lucide-react'
+import React from 'react'
+import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
-    const [showScrollTop, setShowScrollTop] = useState(false)
-    const [email, setEmail] = useState('')
-    const [isSubscribed, setIsSubscribed] = useState(false)
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setShowScrollTop(window.scrollY > 500)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault()
-        if (email) {
-            setIsSubscribed(true)
-            setTimeout(() => setIsSubscribed(false), 3000)
-            setEmail('')
-        }
-    }
-
     const quickLinks = [
-        { name: 'About Us', href: '#about', icon: <Users className="w-4 h-4" /> },
-        { name: 'Our Activities', href: '#services', icon: <Calendar className="w-4 h-4" /> },
-        { name: 'Testimonials', href: '#testimonials', icon: <Star className="w-4 h-4" /> },
-        { name: 'Our Team', href: '#team', icon: <Award className="w-4 h-4" /> },
-        { name: 'Contact', href: '#contact', icon: <MessageCircle className="w-4 h-4" /> },
+        { name: 'About Us', href: '#about' },
+        { name: 'Our Activities', href: '#services' },
+        { name: 'Contact', href: '#contact' },
     ]
 
     const socialLinks = [
-        { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-500' },
-        { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-sky-500' },
-        { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-500' },
-        { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-500' },
-    ]
-
-    const stats = [
-        { number: '500+', label: 'Active Members', icon: <Users className="w-5 h-5" /> },
-        { number: '15+', label: 'Years of Impact', icon: <Award className="w-5 h-5" /> },
-        { number: '98%', label: 'Satisfaction Rate', icon: <Star className="w-5 h-5" /> },
+        { name: 'Facebook', href: '#', icon: <Facebook className="w-5 h-5" /> },
+        { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
+        { name: 'Instagram', href: '#', icon: <Instagram className="w-5 h-5" /> },
+        { name: 'YouTube', href: '#', icon: <Youtube className="w-5 h-5" /> },
     ]
 
     const contactInfo = [
         {
-            icon: <Mail className="w-4 h-4 text-ywamteal" />,
+            icon: <Mail className="w-4 h-4" />,
             title: "Email",
-            value: "info@ywamaccra.org",
-            link: "mailto:info@ywamaccra.org"
+            value: "info@ywamaccra.org"
         },
         {
-            icon: <Phone className="w-4 h-4 text-ywamteal" />,
+            icon: <Phone className="w-4 h-4" />,
             title: "Phone",
-            value: "+233 20 123 4567",
-            link: "tel:+233201234567"
+            value: "+233 20 123 4567"
         },
         {
-            icon: <MapPin className="w-4 h-4 text-ywamteal" />,
+            icon: <MapPin className="w-4 h-4" />,
             title: "Location",
-            value: "Accra, Ghana",
-            link: "https://maps.google.com/?q=Accra,Ghana"
-        },
-        {
-            icon: <Award className="w-4 h-4 text-ywamteal" />,
-            title: "Working Hours",
-            value: "Mon - Fri: 9:00 AM - 5:00 PM",
-            link: null
+            value: "Accra, Ghana"
         }
     ];
 
     return (
-        <footer className="relative bg-background text-white overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="py-20">
-                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-                        {/* Brand Section */}
-                        <div className="lg:col-span-1">
-                            <div className="space-y-6">
-                                {/* Logo */}
-                                <div className="flex items-center gap-3">
-                                    <div className="w-12 h-12 bg-background border border-white/10 rounded-xl flex items-center justify-center">
-                                        <span className="text-2xl font-bold text-primary-400">YWAM</span>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-2xl font-bold text-white">YWAM Accra</h3>
-                                        <p className="text-sm text-white">Ministry & Fellowship</p>
-                                    </div>
-                                </div>
-                                <p className="text-white leading-relaxed">
-                                    Empowering students through faith, fellowship, and personal growth. Building leaders for tomorrow through transformative experiences and meaningful connections.
-                                </p>
-                                {/* Social Links */}
-                                <div className="flex gap-4">
-                                    {socialLinks.map((social, index) => (
-                                        <a
-                                            key={social.name}
-                                            href={social.href}
-                                            className={`w-10 h-10 bg-background border border-white/10 rounded-xl flex items-center justify-center text-white hover:text-primary-400 transition-all duration-300 hover:bg-primary-600/10`}
-                                        >
-                                            {social.icon}
-                                        </a>
-                                    ))}
-                                </div>
+        <footer className="bg-gray-900 text-white">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Brand Section */}
+                    <div className="lg:col-span-1">
+                        <div className="space-y-6">
+                            <div>
+                                <h3 className="text-2xl font-bold text-white mb-2">YWAM Accra</h3>
+                                <p className="text-gray-400">Igniting Christ-Centered Transformation</p>
+                            </div>
+                            <p className="text-gray-300 leading-relaxed">
+                                Empowering students through faith, fellowship, and personal growth. Building leaders for tomorrow through transformative experiences.
+                            </p>
+                            {/* Social Links */}
+                            <div className="flex gap-4">
+                                {socialLinks.map((social, index) => (
+                                    <a
+                                        key={social.name}
+                                        href={social.href}
+                                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-ywamteal-600 transition-colors duration-200"
+                                    >
+                                        {social.icon}
+                                    </a>
+                                ))}
                             </div>
                         </div>
-                        {/* Quick Links */}
-                        <div>
-                            <h4 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">Quick Links</h4>
-                            <ul className="space-y-4">
-                                {quickLinks.map((link, index) => (
-                                    <li key={link.name}>
-                                        <a
-                                            href={link.href}
-                                            className="flex items-center gap-3 text-white hover:text-primary-400 transition-all duration-300 group"
-                                        >
-                                            <span className="w-6 h-6 bg-background border border-white/10 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                {link.icon}
-                                            </span>
-                                            <span className="group-hover:translate-x-1 transition-transform duration-300">
-                                                {link.name}
-                                            </span>
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        {/* Contact Info */}
-                        <div>
-                            <h4 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">Contact Info</h4>
-                            <ul className="space-y-4">
-                                {contactInfo.map((info, idx) => (
-                                    <li key={info.title} className="flex items-start gap-3">
-                                        <div className="w-8 h-8 bg-background border border-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                                            {info.icon}
-                                        </div>
-                                        <div>
-                                            <div className="font-semibold text-white">{info.title}</div>
-                                            {info.link ? (
-                                                <a
-                                                    href={info.link}
-                                                    className="inline-flex items-center gap-2 text-ywamteal hover:text-ywamint transition-colors duration-200"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    {info.value}
-                                                </a>
-                                            ) : (
-                                                <div className="text-white">{info.value}</div>
-                                            )}
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+                        <ul className="space-y-3">
+                            {quickLinks.map((link, index) => (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        className="text-gray-300 hover:text-white transition-colors duration-200"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-white mb-6">Contact Info</h4>
+                        <ul className="space-y-3">
+                            {contactInfo.map((info, idx) => (
+                                <li key={info.title} className="flex items-start gap-3">
+                                    <div className="w-6 h-6 bg-gray-800 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                        {info.icon}
+                                    </div>
+                                    <div>
+                                        <div className="font-medium text-white">{info.title}</div>
+                                        <div className="text-gray-300">{info.value}</div>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Newsletter */}
+                    <div>
+                        <h4 className="text-lg font-semibold text-white mb-6">Stay Connected</h4>
+                        <p className="text-gray-300 mb-4">
+                            Subscribe to our newsletter for updates and events.
+                        </p>
+                        <div className="flex">
+                            <input
+                                type="email"
+                                placeholder="Your email"
+                                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ywamteal-500"
+                            />
+                            <button className="px-4 py-2 bg-ywamteal-600 text-white rounded-r-lg hover:bg-ywamteal-700 transition-colors duration-200">
+                                Subscribe
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-white/10 py-8 text-center text-white text-sm">
-                    &copy; {new Date().getFullYear()} YWAM Accra. All rights reserved.
+
+                {/* Bottom Bar */}
+                <div className="border-t border-gray-800 mt-12 pt-8 text-center">
+                    <p className="text-gray-400">
+                        &copy; {new Date().getFullYear()} YWAM Accra. All rights reserved.
+                    </p>
                 </div>
             </div>
-            <button className="btn-primary bg-ywamteal hover:bg-ywamint text-background font-bold">Contact Us</button>
         </footer>
     )
-} 
+}

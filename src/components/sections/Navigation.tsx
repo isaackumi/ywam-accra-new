@@ -1,133 +1,109 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import { siteContent } from '@/data/content'
-import { ChevronDown, Menu, X, Heart, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+    const [isOpen, setIsOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && !(event.target as Element).closest('.mobile-menu')) {
-        setIsOpen(false)
-      }
-    }
+    const navigation = [
+        { name: 'Home', href: '#home' },
+        { name: 'About', href: '#about' },
+        { name: 'Activities', href: '#services' },
+        { name: 'Contact', href: '#contact' },
+    ]
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [isOpen])
+    return (
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        }`}>
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    {/* Logo */}
+                    <div className="flex-shrink-0">
+                        <a href="#home" className="text-2xl font-bold text-gray-900">
+                            YWAM <span className="text-ywamteal-600">Accra</span>
+                        </a>
+                    </div>
 
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex items-baseline space-x-8">
+                            {navigation.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                        isScrolled 
+                                            ? 'text-gray-700 hover:text-ywamteal-600' 
+                                            : 'text-white hover:text-ywamteal-200'
+                                    }`}
+                                >
+                                    {item.name}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
 
-  const aboutSubmenu = [
-    { name: "Mission & Vision", href: "/about#mission" },
-    { name: "Our Branches", href: "/about#branches" }
-  ]
+                    {/* CTA Button */}
+                    <div className="hidden md:block">
+                        <a
+                            href="#contact"
+                            className="px-6 py-2 bg-ywamteal-600 text-white font-semibold rounded-lg hover:bg-ywamteal-700 transition-colors duration-200"
+                        >
+                            Get Involved
+                        </a>
+                    </div>
 
-  const activitiesSubmenu = [
-    { name: "Eagles Camp", href: "/activities#eagles-camp" },
-    { name: "Love Feasts", href: "/activities#love-feasts" },
-    { name: "Mentoring HUB", href: "/activities#mentoring-hub" },
-    { name: "ICT Skill Training", href: "/activities#ict-training" },
-    { name: "Fun Fair", href: "/activities#fun-fair" },
-    { name: "CG Marriages", href: "/activities#cg-marriages" },
-    { name: "Hall of Fame", href: "/activities#hall-of-fame" }
-  ]
+                    {/* Mobile menu button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className={`p-2 rounded-md transition-colors duration-200 ${
+                                isScrolled 
+                                    ? 'text-gray-700 hover:text-ywamteal-600' 
+                                    : 'text-white hover:text-ywamteal-200'
+                            }`}
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
+                </div>
 
-  const toggleDropdown = (name: string) => {
-    setActiveDropdown(activeDropdown === name ? null : name)
-  }
-
-  const closeMobileMenu = () => {
-    setIsOpen(false)
-    setActiveDropdown(null)
-  }
-
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-background border-b border-white/10`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-12 h-12 bg-background rounded-2xl flex items-center justify-center">
-                <img
-                  src="/images/logo/logo.png"
-                  alt="YWAM Accra Logo"
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </div>
+                {/* Mobile Navigation */}
+                {isOpen && (
+                    <div className="md:hidden">
+                        <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-lg mt-2">
+                            {navigation.map((item) => (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ywamteal-600 hover:bg-gray-50 transition-colors duration-200"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                </a>
+                            ))}
+                            <a
+                                href="#contact"
+                                className="block px-3 py-2 rounded-md text-base font-medium bg-ywamteal-600 text-white hover:bg-ywamteal-700 transition-colors duration-200 mt-4"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Get Involved
+                            </a>
+                        </div>
+                    </div>
+                )}
             </div>
-            <span className="text-2xl font-extrabold text-white tracking-tight">
-              <span className="ml-2 text-ywamteal font-bold">YWAM Accra</span>
-            </span>
-          </Link>
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {siteContent.navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="px-4 py-3 text-white hover:text-primary-400 font-medium transition-all duration-300 rounded-xl hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-xl border border-white/10 bg-background text-white hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-            aria-label="Toggle mobile menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="lg:hidden mobile-menu bg-background border-t border-white/10">
-          <div className="container mx-auto px-4 py-6">
-            <div className="space-y-2">
-              {siteContent.navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block w-full text-center px-4 py-4 text-white font-semibold rounded-2xl hover:bg-white/10 transition-all duration-300 mb-4"
-                  onClick={closeMobileMenu}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </nav>
-  )
+        </nav>
+    )
 }
-

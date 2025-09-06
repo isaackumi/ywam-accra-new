@@ -63,15 +63,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`dark ${inter.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#6366F1" />
+        <meta name="theme-color" content="#00A693" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} antialiased bg-background text-foreground`}>
-        <div className="min-h-screen bg-background font-sans antialiased">
+      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
+        <div className="min-h-screen bg-white font-sans antialiased">
           {children}
         </div>
       </body>
