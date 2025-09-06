@@ -28,24 +28,24 @@ export default function About() {
     ]
 
     return (
-        <section id="about" className="py-20 bg-white">
+        <section id="about" className="py-20 bg-gray-800">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
                             About YWAM Accra
                         </h2>
-                        <div className="w-24 h-1 bg-ywamteal-600 mx-auto mb-8"></div>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                             YWAM Accra is a transformational movement that instills Christ-centered values in young minds and future generations. We believe that what we feed our hearts and minds shapes who we become.
                         </p>
                     </div>
 
                     {/* Mission Statement */}
-                    <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Mission</h3>
-                        <p className="text-lg text-gray-700 text-center leading-relaxed">
+                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 mb-16 border border-gray-600/20">
+                        <h3 className="text-2xl font-bold text-white mb-4 text-center font-space-grotesk">Our Mission</h3>
+                        <p className="text-lg text-gray-300 text-center leading-relaxed">
                             To create a vibrant community where young people can grow spiritually, develop leadership skills, and build meaningful relationships that last a lifetime.
                         </p>
                     </div>
@@ -54,11 +54,11 @@ export default function About() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {features.map((feature, index) => (
                             <div key={feature.title} className="text-center p-6">
-                                <div className="w-16 h-16 bg-ywamteal-100 rounded-full flex items-center justify-center text-ywamteal-600 mx-auto mb-4">
+                                <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-4 border border-blue-500/30">
                                     {feature.icon}
                                 </div>
-                                <h4 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h4>
-                                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                                <h4 className="text-xl font-semibold text-white mb-3 font-space-grotesk">{feature.title}</h4>
+                                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
                             </div>
                         ))}
                     </div>

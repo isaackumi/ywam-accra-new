@@ -146,7 +146,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)'],
-        display: ['var(--font-raleway)'],
+        'space-grotesk': ['var(--font-space-grotesk)'],
         serif: ['Georgia', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'monospace'],
       },

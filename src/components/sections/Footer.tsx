@@ -36,14 +36,14 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-gray-900 border-t border-gray-800">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Brand Section */}
                     <div className="lg:col-span-1">
                         <div className="space-y-6">
                             <div>
-                                <h3 className="text-2xl font-bold text-white mb-2">YWAM Accra</h3>
+                                <h3 className="text-2xl font-bold text-white mb-2 font-space-grotesk">YWAM Accra</h3>
                                 <p className="text-gray-400">Igniting Christ-Centered Transformation</p>
                             </div>
                             <p className="text-gray-300 leading-relaxed">
@@ -55,7 +55,7 @@ export default function Footer() {
                                     <a
                                         key={social.name}
                                         href={social.href}
-                                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-ywamteal-600 transition-colors duration-200"
+                                        className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-colors duration-200 border border-gray-700"
                                     >
                                         {social.icon}
                                     </a>
@@ -66,7 +66,7 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
+                        <h4 className="text-lg font-semibold text-white mb-6 font-space-grotesk">Quick Links</h4>
                         <ul className="space-y-3">
                             {quickLinks.map((link, index) => (
                                 <li key={link.name}>
@@ -83,11 +83,11 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-6">Contact Info</h4>
+                        <h4 className="text-lg font-semibold text-white mb-6 font-space-grotesk">Contact Info</h4>
                         <ul className="space-y-3">
                             {contactInfo.map((info, idx) => (
                                 <li key={info.title} className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-gray-800 rounded flex items-center justify-center flex-shrink-0 mt-1">
+                                    <div className="w-6 h-6 bg-gray-800 rounded flex items-center justify-center flex-shrink-0 mt-1 border border-gray-700">
                                         {info.icon}
                                     </div>
                                     <div>
@@ -101,7 +101,7 @@ export default function Footer() {
 
                     {/* Newsletter */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-6">Stay Connected</h4>
+                        <h4 className="text-lg font-semibold text-white mb-6 font-space-grotesk">Stay Connected</h4>
                         <p className="text-gray-300 mb-4">
                             Subscribe to our newsletter for updates and events.
                         </p>
@@ -109,9 +109,9 @@ export default function Footer() {
                             <input
                                 type="email"
                                 placeholder="Your email"
-                                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ywamteal-500"
+                                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             />
-                            <button className="px-4 py-2 bg-ywamteal-600 text-white rounded-r-lg hover:bg-ywamteal-700 transition-colors duration-200">
+                            <button className="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition-colors duration-200">
                                 Subscribe
                             </button>
                         </div>

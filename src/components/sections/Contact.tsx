@@ -58,27 +58,27 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className="py-20 bg-white">
+        <section id="contact" className="py-20 bg-gray-800">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
                             Contact Us
                         </h2>
-                        <div className="w-24 h-1 bg-ywamteal-600 mx-auto mb-8"></div>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                             Get in touch with us for any inquiries or to learn more about our ministry. We're here to help you on your spiritual journey.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         {/* Contact Form */}
-                        <div className="bg-gray-50 rounded-2xl p-8">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-8">Send us a Message</h3>
+                        <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/20">
+                            <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Send us a Message</h3>
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
                                     <input
                                         type="text"
                                         id="name"
@@ -86,12 +86,12 @@ export default function Contact() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ywamteal-500 focus:border-ywamteal-500 transition-colors duration-200 bg-white"
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
                                     <input
                                         type="email"
                                         id="email"
@@ -99,12 +99,12 @@ export default function Contact() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ywamteal-500 focus:border-ywamteal-500 transition-colors duration-200 bg-white"
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                                         placeholder="you@example.com"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
                                     <input
                                         type="text"
                                         id="subject"
@@ -112,12 +112,12 @@ export default function Contact() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ywamteal-500 focus:border-ywamteal-500 transition-colors duration-200 bg-white"
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                                         placeholder="Subject"
                                     />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Message</label>
                                     <textarea
                                         id="message"
                                         name="message"
@@ -125,38 +125,38 @@ export default function Contact() {
                                         onChange={handleChange}
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ywamteal-500 focus:border-ywamteal-500 transition-colors duration-200 bg-white"
+                                        className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                                         placeholder="Type your message here..."
                                     />
                                 </div>
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-ywamteal-600 text-white font-semibold rounded-lg hover:bg-ywamteal-700 transition-colors duration-200 disabled:opacity-50"
+                                    className="w-full flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white font-semibold text-lg rounded-lg hover:bg-blue-500 transition-all duration-200 disabled:opacity-50 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105"
                                 >
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
-                                    <Send className="w-5 h-5" />
+                                    <Send className="w-6 h-6" />
                                 </button>
                             </form>
                         </div>
 
                         {/* Contact Info */}
-                        <div className="bg-gray-50 rounded-2xl p-8">
-                            <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+                        <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/20">
+                            <h3 className="text-2xl font-bold text-white mb-8 font-space-grotesk">Contact Information</h3>
                             <div className="space-y-6">
                                 {contactInfo.map((info, idx) => (
                                     <div key={info.title} className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-ywamteal-100 rounded-lg flex items-center justify-center">
-                                            <info.icon className="w-6 h-6 text-ywamteal-600" />
+                                        <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
+                                            <info.icon className="w-6 h-6 text-blue-400" />
                                         </div>
                                         <div>
-                                            <div className="font-semibold text-gray-900">{info.title}</div>
+                                            <div className="font-semibold text-white">{info.title}</div>
                                             {info.link ? (
-                                                <a href={info.link} className="text-ywamteal-600 hover:text-ywamteal-700 transition-colors duration-200">
+                                                <a href={info.link} className="text-blue-400 hover:text-blue-300 transition-colors duration-200">
                                                     {info.value}
                                                 </a>
                                             ) : (
-                                                <div className="text-gray-600">{info.value}</div>
+                                                <div className="text-gray-300">{info.value}</div>
                                             )}
                                         </div>
                                     </div>

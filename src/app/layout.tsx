@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Raleway } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { siteContent } from '@/data/content'
 
@@ -9,9 +9,9 @@ const inter = Inter({
   display: 'swap'
 })
 
-const raleway = Raleway({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-raleway',
+  variable: '--font-space-grotesk',
   display: 'swap'
 })
 
@@ -63,15 +63,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#00A693" />
+        <meta name="theme-color" content="#1a1a1a" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
-        <div className="min-h-screen bg-white font-sans antialiased">
+      <body className={`${inter.className} antialiased bg-gray-900 text-white`}>
+        <div className="min-h-screen bg-gray-900 font-sans antialiased">
           {children}
         </div>
       </body>
