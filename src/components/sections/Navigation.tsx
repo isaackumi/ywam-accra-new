@@ -107,7 +107,7 @@ export default function Navigation() {
                                 
                                 {/* Dropdown Menu */}
                                 {isCoursesOpen && (
-                                    <div className="absolute top-full left-0 mt-2 w-96 bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-gray-700 p-6">
+                                    <div className="absolute top-full left-0 mt-2 w-[500px] bg-gray-800/95 backdrop-blur-md rounded-xl shadow-2xl border border-gray-700 p-6 max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 hover:scrollbar-thumb-gray-500">
                                         <h3 className="text-lg font-semibold text-white mb-4 font-space-grotesk">Our Bible School Programs</h3>
                                         <div className="grid grid-cols-1 gap-3">
                                             {courses.map((course, index) => (
