@@ -26,15 +26,10 @@ function MemberCard({ name, role, bio, image }: { name: string; role: string; bi
 }
 
 export default function Team() {
-    const founder = siteContent.team.founder;
-    const advisory = siteContent.team.advisoryBoard;
-    const associates = siteContent.team.associates;
-    const outreach = siteContent.team.outreach;
-    const it = siteContent.team.it;
-    const research = siteContent.team.research;
-    const translation = siteContent.team.translation;
-    const regional = siteContent.team.regional;
-    const international = siteContent.team.international;
+    const seniorPastor = siteContent.team.seniorPastor;
+    const leadership = siteContent.team.leadership;
+    const coordinators = siteContent.team.coordinators;
+    const volunteers = siteContent.team.volunteers;
 
     return (
         <section id="team" className="py-24 bg-gray-50">
@@ -45,100 +40,58 @@ export default function Team() {
                     </h2>
                     <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Meet our dedicated team of language and communication experts.
+                        Meet our dedicated team of spiritual leaders and ministry coordinators.
                     </p>
                 </div>
 
-                {/* Founder */}
+                {/* Senior Pastor */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><Award className="w-6 h-6 text-primary-400" /> Founder & CEO</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <MemberCard name={founder.name} role={founder.title} bio={founder.bio} image={'/images/doc.jpeg'} />
+                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2">
+                        <Award className="w-6 h-6 text-primary-400" /> Senior Leadership
+                    </h3>
+                    <div className="max-w-2xl mx-auto">
+                        <MemberCard 
+                            name={seniorPastor.name} 
+                            role={seniorPastor.title} 
+                            bio={seniorPastor.bio} 
+                            image="/images/team/senior-pastor.jpg" 
+                        />
                     </div>
                 </div>
 
-                {/* Advisory Board */}
+                {/* Leadership Team */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><Users className="w-6 h-6 text-primary-400" /> Advisory Board</h3>
+                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2">
+                        <Users className="w-6 h-6 text-primary-400" /> Leadership Team
+                    </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {advisory.map((member) => (
-                            <MemberCard key={member.name} name={member.name} role={member.role} />
+                        {leadership.map((member, index) => (
+                            <MemberCard key={index} name={member.name} role={member.role} />
                         ))}
                     </div>
                 </div>
 
-                {/* Associates */}
+                {/* Ministry Coordinators */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><Users className="w-6 h-6 text-primary-400" /> Associates</h3>
+                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2">
+                        <Users className="w-6 h-6 text-primary-400" /> Ministry Coordinators
+                    </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {associates.map((member) => (
-                            <MemberCard key={member.name} name={member.name} role={member.role} />
+                        {coordinators.map((member, index) => (
+                            <MemberCard key={index} name={member.name} role={member.role} />
                         ))}
                     </div>
                 </div>
 
-                {/* Outreach & Media */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><Users className="w-6 h-6 text-primary-400" /> Outreach, Media & PR</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <MemberCard name={outreach.manager} role="Outreach & Programs Manager" />
-                        {outreach.media.map((name) => (
-                            <MemberCard key={name} name={name} role="Media & PR Officer" />
-                        ))}
-                    </div>
-                </div>
-
-                {/* IT & Graphic Design */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><User className="w-6 h-6 text-primary-400" /> IT & Graphic Design</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {it.map((name) => (
-                            <MemberCard key={name} name={name} role="IT & Graphic Design" />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Research & Publications */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><User className="w-6 h-6 text-primary-400" /> Data, Research & Publications</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {research.map((name) => (
-                            <MemberCard key={name} name={name} role="Research & Publications" />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Translation Team */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><User className="w-6 h-6 text-primary-400" /> Language & Translation Team</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {translation.map((name) => (
-                            <MemberCard key={name} name={name} role="Language & Translation" />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Regional Team Leaders */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><MapPin className="w-6 h-6 text-primary-400" /> Regional Team Leaders</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {Object.entries(regional).map(([region, names]) =>
-                            names.map((name: string) => (
-                                <MemberCard key={region + name} name={name} role={region} />
-                            ))
-                        )}
-                    </div>
-                </div>
-
-                {/* International Reps */}
+                {/* Volunteers */}
                 <div className="mb-8">
-                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2"><Globe className="w-6 h-6 text-primary-400" /> International Representatives</h3>
+                    <h3 className="text-2xl font-bold text-primary-600 mb-6 flex items-center gap-2">
+                        <Users className="w-6 h-6 text-primary-400" /> Volunteers
+                    </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {Object.entries(international).map(([country, names]) =>
-                            names.map((name: string) => (
-                                <MemberCard key={country + name} name={name} role={country} />
-                            ))
-                        )}
+                        {volunteers.map((member, index) => (
+                            <MemberCard key={index} name={member.name} role={member.role} />
+                        ))}
                     </div>
                 </div>
 
@@ -153,4 +106,4 @@ export default function Team() {
             </div>
         </section>
     );
-} 
+}
